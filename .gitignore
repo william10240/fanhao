@@ -1,0 +1,29 @@
+.DS_Store
+/static
+fanhao
+fanhao.exe
+fanhao.db
+fanhao1.db
+foo.db
+foo1.db
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/package-lock.json

@@ -1,0 +1,30 @@
+
+version: '3'
+
+services:
+
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./:/app
+# 以下一行 数据放在自定义目录
+#      - /data/dcdb/fanhao/photos:/app/photos
+    ports: 
+      - 8888:80
+    restart: always
+
+  go:
+    image: golang:1.17
+    volumes:
+      - ./:/app
+# 以下一行 数据放在自定义目录
+#      - /data/dcdb/fanhao/fanhao.db:/app/fanhao.db
+#      - /data/dcdb/fanhao/photos:/app/photos
+    working_dir: /app
+    environment:
+      - GO111MODULE=on
+      - GOPROXY=https://goproxy.cn,https://proxy.golang.org,direct
+    command: "/app/fanhao"
+    restart: always
+

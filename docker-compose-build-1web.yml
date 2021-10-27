@@ -1,0 +1,13 @@
+
+version: '3'
+
+services:
+
+  buildweb:
+    image: node:14.15.3-alpine
+    volumes:
+      - ./web:/web
+    network_mode: "host"
+    working_dir: /web
+    user: "1000:1000"
+    command: /bin/sh -c "/usr/local/bin/npm i --registry=http://registry.npm.taobao.org; /usr/local/bin/npm run build; echo 'build done'"

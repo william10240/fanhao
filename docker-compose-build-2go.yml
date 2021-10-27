@@ -1,0 +1,15 @@
+
+version: '3'
+
+services:
+
+  buildgo:
+    image: golang:1.17
+    volumes:
+      - ./:/app
+    network_mode: "host"
+    working_dir: /app
+    environment:
+      - GO111MODULE=on
+      - GOPROXY=https://goproxy.cn,https://proxy.golang.org,direct
+    command: /bin/sh -c "go build;chmod +x fanhao;echo 'build done'"

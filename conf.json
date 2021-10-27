@@ -1,0 +1,7 @@
+{
+  "port": "8888",
+  "path": "photos",
+  "dbName": "fanhao.db",
+  "proxy": "",
+  "busUrl": "https://www.busdmm.xyz/"
+}
